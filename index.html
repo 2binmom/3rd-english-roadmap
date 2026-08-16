@@ -114,7 +114,6 @@
   .step-nav-row{display:flex; align-items:flex-start; gap:14px;}
   .step-nav-body{flex:1; min-width:0;}
   .step-nav-title{font-size:16px; font-weight:800; color:var(--ink); margin:0 0 6px; display:flex; align-items:center; gap:6px;}
-  .step-nav-title .arrow{color:var(--pink-deep); font-size:14px;}
   .step-nav-tag{
     font-size:10.5px; font-weight:800; color:var(--pink-deep); background:var(--pink-bg);
     border-radius:999px; padding:2px 9px; margin-left:2px;
@@ -122,6 +121,33 @@
   .step-nav-desc{font-size:13px; color:var(--sub); line-height:1.75; margin:0;}
 
   /* ── 타임라인 ── */
+  /* ── 목록 / 상세 화면 전환 ── */
+  #detailView{display:none;}
+  #detailView.open{display:block;}
+  .step{display:none;}
+  .step.open{display:block;}
+  .detail-topbar{
+    max-width:640px; margin:0 auto; padding:18px 18px 0;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  .back-btn{
+    display:inline-flex; align-items:center; gap:6px; background:#fff; border:1.5px solid var(--line);
+    border-radius:999px; padding:9px 17px; font-size:13.5px; font-weight:700; color:var(--pink-deep);
+    cursor:pointer; font-family:inherit; transition:all .15s;
+  }
+  .back-btn:hover{background:var(--pink-bg); border-color:var(--pink-light);}
+  .detail-dots{display:flex; gap:6px;}
+  .detail-dots span{width:7px; height:7px; border-radius:50%; background:var(--line);}
+  .detail-dots span.on{background:var(--pink);}
+  .step-jump{display:flex; gap:8px; margin-top:22px;}
+  .step-jump button{
+    flex:1; border:1.5px solid var(--line); background:#fff; color:var(--pink-deep);
+    border-radius:14px; padding:14px 10px; font-size:13.5px; font-weight:800;
+    cursor:pointer; font-family:inherit; transition:all .15s;
+  }
+  .step-jump button:hover{background:var(--pink-bg); border-color:var(--pink-light);}
+  .step-jump button.main{background:var(--pink); border-color:var(--pink); color:#fff;}
+
   .timeline{position:relative; padding:36px 0 4px;}
   .timeline::before{
     content:''; position:absolute; left:23px; top:8px; bottom:40px; width:2px;
@@ -272,7 +298,7 @@
   </div>
 </header>
 
-<div class="intro">
+<div class="intro" id="landingView">
   <div class="intro-box">
     안녕하세요 :) <strong>투빈맘</strong>이에요 💖<br><br>
     경빈이는 영어학원 없이 <strong>엄마표 영어 루틴</strong>으로 시작해서 <strong>초2 여름, 폴리 레벨테스트 합격</strong>까지 도전해본 케이스예요 😊<br><br>
@@ -283,49 +309,49 @@
     시기가 지나면서 <strong>뭐가 어떻게 바뀌었는지</strong> 순서대로 정리했답니다💖
   </div>
 
-  <div class="step-nav-meta">시기 5개 · 누르면 아래 내용으로 이동해요</div>
+  <div class="step-nav-meta">시기 5개 · 누르면 자세히 볼 수 있어요</div>
   <div class="step-nav">
-    <a class="step-nav-card" href="#step0">
+    <a class="step-nav-card" href="#step0" onclick="showDetail('step0', event)">
       <div class="step-nav-row">
         <div class="step-nav-num">0</div>
         <div class="step-nav-body">
-          <div class="step-nav-title">7세 하반기 <span class="arrow">↓</span></div>
+          <div class="step-nav-title">7세 하반기</div>
           <p class="step-nav-desc">아직은 '공부'보다 '노출'. 만 3세에 멈췄던 영어를 7세 11월부터 흘려듣기·영상 노출로 천천히 다시 시작했어요.</p>
         </div>
       </div>
     </a>
-    <a class="step-nav-card" href="#step1">
+    <a class="step-nav-card" href="#step1" onclick="showDetail('step1', event)">
       <div class="step-nav-row">
         <div class="step-nav-num">1</div>
         <div class="step-nav-body">
-          <div class="step-nav-title">초1 <span class="arrow">↓</span></div>
+          <div class="step-nav-title">초1</div>
           <p class="step-nav-desc">영어 루틴, 처음 만들기. 파닉스로 소리를 익히고 집중듣기·사이트워드·낭독까지 확장한 시기예요.</p>
         </div>
       </div>
     </a>
-    <a class="step-nav-card" href="#step2">
+    <a class="step-nav-card" href="#step2" onclick="showDetail('step2', event)">
       <div class="step-nav-row">
         <div class="step-nav-num">2</div>
         <div class="step-nav-body">
-          <div class="step-nav-title">초2 <span class="arrow">↓</span></div>
+          <div class="step-nav-title">초2</div>
           <p class="step-nav-desc">리딩 확장 &amp; 폴리 레벨테스트 합격 ✨ 합격 후 찾아온 슬럼프를 유연하게 조율한 시기예요.</p>
         </div>
       </div>
     </a>
-    <a class="step-nav-card" href="#step3">
+    <a class="step-nav-card" href="#step3" onclick="showDetail('step3', event)">
       <div class="step-nav-row">
         <div class="step-nav-num">3</div>
         <div class="step-nav-body">
-          <div class="step-nav-title">초3 (지금까지) <span class="arrow">↓</span></div>
+          <div class="step-nav-title">초3 (지금까지)</div>
           <p class="step-nav-desc">수학에 집중하는 동안, 영어는 유지 모드. 리얼 아카데미로 라이팅·스피킹을 연결했어요.</p>
         </div>
       </div>
     </a>
-    <a class="step-nav-card" href="#step4">
+    <a class="step-nav-card" href="#step4" onclick="showDetail('step4', event)">
       <div class="step-nav-row">
         <div class="step-nav-num">4</div>
         <div class="step-nav-body">
-          <div class="step-nav-title">여름방학 (지금) <span class="arrow">↓</span></div>
+          <div class="step-nav-title">여름방학 (지금)</div>
           <p class="step-nav-desc">1년 제자리걸음이던 영어, 다시 불붙이기. AR 검사를 계기로 집중듣기·낭독을 재시작했어요.</p>
         </div>
       </div>
@@ -333,7 +359,13 @@
   </div>
 </div>
 
-<div class="wrap">
+<div class="wrap" id="detailView">
+  <div class="detail-topbar">
+    <button type="button" class="back-btn" onclick="showLanding(event)">← 목록으로</button>
+    <div class="detail-dots" id="detailDots">
+      <span data-s="step0"></span><span data-s="step1"></span><span data-s="step2"></span><span data-s="step3"></span><span data-s="step4"></span>
+    </div>
+  </div>
   <div class="timeline">
 
     <!-- STEP 0 · 7세 하반기 -->
@@ -453,6 +485,9 @@
       </div>
 
       <div class="note"><b>📘 다음 편 예고</b>→ Step 1. 초1 영어 로드맵 — 입학 후, 본격적인 영어 학습 시작!</div>
+      <div class="step-jump">
+        <button type="button" class="main" onclick="showDetail('step1', event)">1️⃣ 초1 보기 →</button>
+      </div>
     </section>
 
     <!-- STEP 1 · 초1 -->
@@ -519,6 +554,10 @@
       </div>
       <div class="change-box"><b>📈 뭐가 바뀌었나요 (1학기 → 겨울방학)</b>사이트워드·필사 새로 추가 → 쓰기 루틴 시작 · 집듣 10분 → 30분으로 확대 · 겨울방학엔 '집듣 → 낭독' 루틴 본격 정착</div>
       <div class="note"><b>💬 투빈맘 한 줄 기록</b>초1은 영어 영상에 익숙해지던 시기였어요. 조급하지 않게 매일 루틴을 유지하며 학습량을 천천히 늘렸고, 겨울방학엔 '귀로 들은 문장을 입으로 말하는' 첫 감각을 익혔어요. 이 루틴이 초2부터 리딩 중심으로 발전해요.</div>
+      <div class="step-jump">
+        <button type="button" onclick="showDetail('step0', event)">← 7세 하반기</button>
+        <button type="button" class="main" onclick="showDetail('step2', event)">2️⃣ 초2 보기 →</button>
+      </div>
     </section>
 
     <!-- STEP 2 · 초2 -->
@@ -612,6 +651,10 @@
       </div>
       <div class="change-box"><b>📈 뭐가 바뀌었나요</b>화상영어 그룹 → 1:1 VIPKid 전환 · Word Reading 60 → 80 · ORT 1~3단계 → 6~8단계 · 필사 → 영어 글쓰기 워크북</div>
       <div class="note"><b>💬 투빈맘 한 줄 기록</b>3주간의 짧은 여름방학 동안 문법·듣기 문제집을 처음 경험했고, <b>폴리 레벨테스트 합격</b>까지 해냈어요. 하지만 합격 후 슬럼프가 찾아와서 낭독·필사는 대폭 줄이고, 유즈스쿨·영어 글쓰기·1:1 화상영어로 루틴을 유연하게 재구성했어요. 엄마표의 가장 큰 장점은 '유연한 조율력'이더라구요🌿</div>
+      <div class="step-jump">
+        <button type="button" onclick="showDetail('step1', event)">← 초1</button>
+        <button type="button" class="main" onclick="showDetail('step3', event)">3️⃣ 초3 보기 →</button>
+      </div>
     </section>
 
     <!-- STEP 3 · 초3 (지금까지) -->
@@ -660,6 +703,10 @@
       </div>
       <div class="keep-note"><b>계속 이어간 것</b> · ORT 집중듣기(10~12단계로 레벨업), VIPKid 1:1 화상영어, 자막 없는 영어 영상 노출은 그대로 유지했어요.</div>
       <div class="note"><b>💬 투빈맘 한 줄 기록</b>7세엔 영상 10분도 힘들어했는데, 이젠 자막 없는 장편 영화도 즐길 만큼 듣기 체력이 늘었어요. 다만 엄마표만으로 계속 끌고 가기엔 체력적으로 부담이 생겨서, 리얼 아카데미 같은 패드 학습을 함께 활용하며 저도 오래 갈 수 있는 방향을 찾고 있어요📖💕</div>
+      <div class="step-jump">
+        <button type="button" onclick="showDetail('step2', event)">← 초2</button>
+        <button type="button" class="main" onclick="showDetail('step4', event)">4️⃣ 여름방학 보기 →</button>
+      </div>
     </section>
 
     <!-- STEP 4 · 여름방학 (지금) -->
@@ -713,6 +760,10 @@
       </div>
       <div class="change-box"><b>📈 뭐가 바뀌었나요</b>1년 가까이 멈춰있던 집중듣기·낭독을 2점대 책으로 다시 시작 · 화상영어·온라인 도서관·영상 노출은 그대로 유지</div>
       <div class="note"><b>💬 투빈맘 한 줄 기록</b>"아... 이제 영어도 진짜 다시 해야겠다🤣" AR 검사 결과를 보고 든 생각이에요. 레벨 욕심보다 <b>거부감 없이 꾸준히 이어가는 것</b>을 다시 목표로 잡았어요.</div>
+      <div class="step-jump">
+        <button type="button" onclick="showDetail('step3', event)">← 초3 (지금까지)</button>
+        <button type="button" class="main" onclick="showLanding(event)">📋 전체 목록으로</button>
+      </div>
     </section>
 
   </div>
@@ -737,6 +788,51 @@
 </footer>
 
 <script>
+const STEP_IDS = ["step0","step1","step2","step3","step4"];
+
+function showDetail(id, evt){
+  if (evt) evt.preventDefault();
+  document.getElementById("landingView").style.display = "none";
+  document.getElementById("detailView").classList.add("open");
+  STEP_IDS.forEach(sid => {
+    const el = document.getElementById(sid);
+    if (el) el.classList.toggle("open", sid === id);
+  });
+  document.querySelectorAll("#detailDots span").forEach(dot => {
+    dot.classList.toggle("on", dot.dataset.s === id);
+  });
+  window.scrollTo(0, 0);
+  history.pushState({view:"detail", id}, "", "#" + id);
+}
+
+function showLanding(evt){
+  if (evt) evt.preventDefault();
+  document.getElementById("detailView").classList.remove("open");
+  document.getElementById("landingView").style.display = "";
+  window.scrollTo(0, 0);
+  history.pushState({view:"landing"}, "", location.pathname);
+}
+
+function initView(){
+  const hash = STEP_IDS.indexOf(location.hash.replace("#","")) >= 0 ? location.hash.replace("#","") : null;
+  if (hash){
+    showDetail(hash, null);
+    history.replaceState({view:"detail", id:hash}, "", "#" + hash);
+  } else {
+    document.getElementById("landingView").style.display = "";
+    document.getElementById("detailView").classList.remove("open");
+    history.replaceState({view:"landing"}, "", location.pathname);
+  }
+}
+
+window.addEventListener("popstate", e => {
+  const st = e.state;
+  if (st && st.view === "detail") showDetail(st.id, null);
+  else showLanding(null);
+});
+
+initView();
+
 function shareKakao(btn){
   const url = location.href;
   if (navigator.share){ navigator.share({title:document.title, url}).catch(() => {}); return; }
