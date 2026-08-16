@@ -164,8 +164,8 @@
     font-size:46px; line-height:1; color:var(--pink-deep); margin-bottom:6px;
   }
   .step-tag{
-    display:block; font-size:14px; font-weight:800; color:var(--sub);
-    letter-spacing:.2px; margin-bottom:8px;
+    display:inline-block; font-size:14px; font-weight:800; color:var(--pink-deep);
+    background:var(--pink-bg); border-radius:999px; padding:5px 13px; margin-bottom:10px;
   }
   .step h2{
     font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
@@ -1020,7 +1020,7 @@
   </div>
 </div>
 
-<div class="closing">
+<div class="closing" id="closingVoice">
   <div class="voice">
     <b>📘 투빈맘 한마디</b>
     엄마표 영어는<br>
@@ -1052,6 +1052,7 @@ function showDetail(id, evt){
   if (evt) evt.preventDefault();
   document.getElementById("landingView").style.display = "none";
   document.getElementById("detailView").classList.add("open");
+  document.getElementById("closingVoice").style.display = "none";
   STEP_IDS.forEach(sid => {
     const el = document.getElementById(sid);
     if (el) el.classList.toggle("open", sid === id);
@@ -1067,6 +1068,7 @@ function showLanding(evt){
   if (evt) evt.preventDefault();
   document.getElementById("detailView").classList.remove("open");
   document.getElementById("landingView").style.display = "";
+  document.getElementById("closingVoice").style.display = "";
   window.scrollTo(0, 0);
   history.pushState({view:"landing"}, "", location.pathname);
 }
@@ -1079,6 +1081,7 @@ function initView(){
   } else {
     document.getElementById("landingView").style.display = "";
     document.getElementById("detailView").classList.remove("open");
+    document.getElementById("closingVoice").style.display = "";
     history.replaceState({view:"landing"}, "", location.pathname);
   }
 }
