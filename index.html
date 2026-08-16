@@ -127,6 +127,7 @@
     border-radius:999px; padding:2px 9px; margin-left:2px;
   }
   .step-nav-desc{font-size:16px; color:var(--sub); line-height:1.75; margin:0;}
+  .step-nav-desc b{color:var(--pink-deep);}
 
   /* ── 타임라인 ── */
   /* ── 목록 / 상세 화면 전환 ── */
@@ -183,7 +184,7 @@
   .step.s4 .step-tag{background:var(--s4);}
   .step h2{font-size:22px; margin:0 0 8px;}
   .step-summary{font-size:16.5px; color:var(--sub); margin:0 0 16px; line-height:1.85;}
-  .step-summary b{color:var(--ink);}
+  .step-summary b{color:var(--pink-deep);}
 
   .change-box{
     border-radius:14px; padding:14px 16px; margin:16px 0; font-size:16px; line-height:1.85;
@@ -193,19 +194,26 @@
   .step.s2 .change-box{background:var(--s2-bg); color:#8A4F63;}
   .step.s3 .change-box{background:var(--s3-bg); color:#3E6D8C;}
   .step.s4 .change-box{background:var(--s4-bg); color:#8A3F49;}
-  .change-box b{display:block; font-size:15.5px; margin-bottom:5px;}
+  .change-box b{
+    display:block; font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
+    font-size:15.5px; margin-bottom:5px;
+  }
+  br.gap{display:block; margin-top:8px;}
 
   .keep-note{
     font-size:15.5px; color:var(--sub); background:#FAFAFA; border:1px dashed var(--line);
     border-radius:12px; padding:11px 14px; margin:14px 0;
   }
-  .keep-note b{color:#6B5A62;}
+  .keep-note b{font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal; color:#6B5A62;}
 
   .note{
     background:var(--pink-bg); border-radius:13px; padding:14px 16px; margin-top:14px;
     font-size:15.5px; line-height:1.85; color:#8A5B6B;
   }
-  .note b{display:block; color:var(--pink-deep); margin-bottom:4px;}
+  .note b{
+    display:block; font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
+    color:var(--pink-deep); margin-bottom:4px; font-size:16px;
+  }
 
   .quote-box{
     border-left:3px solid var(--pink-light); padding:4px 4px 4px 16px; margin:16px 0;
@@ -221,7 +229,8 @@
   .sub-block{margin:26px 0;}
   .sub-block:first-of-type{margin-top:20px;}
   .sub-head{
-    font-size:18px; font-weight:800; color:var(--ink); margin:0 0 10px;
+    font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
+    font-size:18px; color:var(--ink); margin:0 0 10px;
     display:flex; align-items:center; gap:6px;
   }
   .sub-text{font-size:16px; line-height:1.9; color:#5A4650; margin:0 0 10px;}
@@ -235,7 +244,10 @@
     background:#FFF9E6; border:1px solid #FFE9A8; border-radius:12px;
     padding:13px 15px; margin-top:12px; font-size:15.5px; line-height:1.85; color:#6B5A20;
   }
-  .point-box b{display:block; color:#B8860B; margin-bottom:6px; font-size:15.5px;}
+  .point-box b{
+    display:block; font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
+    color:#B8860B; margin-bottom:6px; font-size:16px;
+  }
   .point-box ul{margin:0 0 0 16px; padding:0;}
   .point-box li{margin-bottom:4px;}
   .point-box li:last-child{margin-bottom:0;}
@@ -283,7 +295,10 @@
     border-radius:var(--radius); padding:20px 22px; margin-top:8px;
     font-size:17px; line-height:1.95; color:#8A5B6B;
   }
-  .voice b{display:block; color:var(--pink-deep); font-size:18px; margin-bottom:8px;}
+  .voice b{
+    display:block; font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
+    color:var(--pink-deep); font-size:19px; margin-bottom:8px;
+  }
 
   footer{
     text-align:center; padding:40px 18px 56px; color:var(--sub); font-size:15.5px;
@@ -312,13 +327,13 @@
 
 <div class="intro" id="landingView">
   <div class="intro-box">
-    안녕하세요 :) <strong>투빈맘</strong>이에요 💖<br><br>
+    안녕하세요 :) <strong>투빈맘</strong>이에요 💖<br><br class="gap">
     경빈이는 영어학원 없이 <strong>엄마표 영어 루틴</strong>으로 시작해서<br>
-    <strong>초2 여름, 폴리 레벨테스트 합격</strong>까지 도전해본 케이스예요 😊<br><br>
+    <strong>초2 여름, 폴리 레벨테스트 합격</strong>까지 도전해본 케이스예요 😊<br><br class="gap">
     ✔️7세 하반기 흘려듣기부터,<br>
     ✔️초1 루틴 잡기,<br>
     ✔️초2 폴리 합격과 슬럼프,<br>
-    ✔️초3 지금 다시 불붙이는 중인 여름방학까지<br><br>
+    ✔️초3 지금 다시 불붙이는 중인 여름방학까지<br><br class="gap">
     시기가 지나면서 <strong>뭐가 어떻게 바뀌었는지</strong> 순서대로 정리했답니다💖
   </div>
 
@@ -329,7 +344,7 @@
         <div class="step-nav-num">1</div>
         <div class="step-nav-body">
           <div class="step-nav-title">7세 하반기</div>
-          <p class="step-nav-desc">아직은 '공부'보다 '노출'. 만 3세에 멈췄던 영어를 7세 11월부터 흘려듣기·영상 노출로 천천히 다시 시작했어요.</p>
+          <p class="step-nav-desc">아직은 '공부'보다 '노출'.<br>만 3세에 멈췄던 영어를 7세 11월부터 <b>흘려듣기·영상 노출</b>로 천천히 다시 시작했어요.</p>
         </div>
       </div>
     </a>
@@ -338,7 +353,7 @@
         <div class="step-nav-num">2</div>
         <div class="step-nav-body">
           <div class="step-nav-title">초1</div>
-          <p class="step-nav-desc">영어 루틴, 처음 만들기. 파닉스로 소리를 익히고 집중듣기·사이트워드·낭독까지 확장한 시기예요.</p>
+          <p class="step-nav-desc">영어 루틴, 처음 만들기.<br>파닉스로 소리를 익히고 <b>집중듣기·사이트워드·낭독</b>까지 확장한 시기예요.</p>
         </div>
       </div>
     </a>
@@ -347,7 +362,7 @@
         <div class="step-nav-num">3</div>
         <div class="step-nav-body">
           <div class="step-nav-title">초2</div>
-          <p class="step-nav-desc">리딩 확장 &amp; 폴리 레벨테스트 합격 ✨ 합격 후 찾아온 슬럼프를 유연하게 조율한 시기예요.</p>
+          <p class="step-nav-desc"><b>리딩 확장 &amp; 폴리 레벨테스트 합격</b> ✨<br>합격 후 찾아온 슬럼프를 유연하게 조율한 시기예요.</p>
         </div>
       </div>
     </a>
@@ -356,7 +371,7 @@
         <div class="step-nav-num">4</div>
         <div class="step-nav-body">
           <div class="step-nav-title">초3 1학기</div>
-          <p class="step-nav-desc">수학에 집중하는 동안, 영어는 유지 모드. 리얼 아카데미로 라이팅·스피킹을 연결했어요.</p>
+          <p class="step-nav-desc">수학에 집중하는 동안, 영어는 유지 모드.<br><b>리얼 아카데미</b>로 라이팅·스피킹을 연결했어요.</p>
         </div>
       </div>
     </a>
@@ -365,7 +380,7 @@
         <div class="step-nav-num">5</div>
         <div class="step-nav-body">
           <div class="step-nav-title">초3 여름방학</div>
-          <p class="step-nav-desc">1년 제자리걸음이던 영어, 다시 불붙이기. AR 검사를 계기로 집중듣기·낭독을 재시작했어요.</p>
+          <p class="step-nav-desc">1년 제자리걸음이던 영어, 다시 불붙이기.<br><b>AR 검사</b>를 계기로 집중듣기·낭독을 재시작했어요.</p>
         </div>
       </div>
     </a>
@@ -386,7 +401,13 @@
       <div class="step-num">1</div>
       <span class="step-tag">STEP 1 · 7세 하반기 (2023.11~)</span>
       <h2>아직은 '공부'보다 '노출'</h2>
-      <p class="step-summary">어릴 때는 영어 영상을 가끔 틀어주곤 했어요. 하지만 <b>만 3세 무렵</b>, 경빈이는 한글 발음을 제대로 못했던 시기라 그때는 과감하게 영어 노출을 멈췄습니다. 이후 4년이 지나, 아이의 언어 감각이 충분히 자리 잡은 <b>7세 11월</b>, 다시 '엄마표 영어'를 천천히 시작했어요🌱</p>
+      <p class="step-summary">
+        어릴 때는 영어 영상을 가끔 틀어주곤 했어요.<br>
+        하지만 <b>만 3세 무렵</b>, 경빈이는 한글 발음을 제대로 못했던 시기라<br>
+        그때는 과감하게 영어 노출을 멈췄습니다.<br>
+        이후 4년이 지나, 아이의 언어 감각이 충분히 자리 잡은 <b>7세 11월</b>,<br>
+        다시 '엄마표 영어'를 천천히 시작했어요🌱
+      </p>
       <p class="quote-box">영어는 흘러넘칠 때 비로소 말이 된다.<br>듣기가 차면 리딩이 되고, 리딩이 넘치면 스피킹이 된다.<br>결국, <b>잠복기를 견디는 시간은 엄마의 인내의 시간</b>이다🍃</p>
 
       <div class="sub-block">
@@ -582,11 +603,11 @@
         </div>
         <div class="note">
           <b>📘 투빈맘 한줄 기록</b>
-          초1 1학기는 '본격 시작기'였어요.<br><br>
-          3월엔 학교 적응에 집중했고, 4월부터 천천히 영어 루틴을 세웠어요💛<br><br>
-          <b>기적의 파닉스</b>로 소리를 익히고,<br><br>
-          <b>리딩·집듣·영상·그림책</b>을 매일 조금씩 병행했어요.<br><br>
-          집듣할 땐 항상 <b>손가락으로 따라가며 듣기 훈련!</b><br><br>
+          초1 1학기는 '본격 시작기'였어요.<br><br class="gap">
+          3월엔 학교 적응에 집중했고, 4월부터 천천히 영어 루틴을 세웠어요💛<br><br class="gap">
+          <b>기적의 파닉스</b>로 소리를 익히고,<br><br class="gap">
+          <b>리딩·집듣·영상·그림책</b>을 매일 조금씩 병행했어요.<br><br class="gap">
+          집듣할 땐 항상 <b>손가락으로 따라가며 듣기 훈련!</b><br><br class="gap">
           영상은 페파피그로 시작해 점점 다양한 영상으로 확장했답니다🎧
         </div>
       </div>
@@ -633,10 +654,10 @@
         </div>
         <div class="note">
           <b>📘 투빈맘 한줄 기록</b>
-          초1 2학기는 영어 루틴이 <b>조금씩 잡혀가던 시기였어요.</b><br><br>
-          사이트워드와 필사를 병행하면서<br><br>
-          '소리 내어 읽고, 짧게라도 쓰는 영어'로 발전했답니다💕<br><br>
-          꾸준함이 쌓이니, 어느 순간 문장을 읽고 쓰는 게<br><br>
+          초1 2학기는 영어 루틴이 <b>조금씩 잡혀가던 시기였어요.</b><br><br class="gap">
+          사이트워드와 필사를 병행하면서<br><br class="gap">
+          '소리 내어 읽고, 짧게라도 쓰는 영어'로 발전했답니다💕<br><br class="gap">
+          꾸준함이 쌓이니, 어느 순간 문장을 읽고 쓰는 게<br><br class="gap">
           자연스럽게 연결되더라고요☺️
         </div>
       </div>
@@ -665,9 +686,9 @@
         </div>
         <div class="note">
           <b>📘 투빈맘 한줄 기록</b>
-          초1 겨울방학은 정말 <b>집중의 시간💗</b>이었어요.<br><br>
-          긴 방학 동안 매일 일정한 루틴을 유지하며,<br><br>
-          <b>집듣 후 낭독하기</b>로 영어 감각이 한 단계 성장했답니다✨<br><br>
+          초1 겨울방학은 정말 <b>집중의 시간💗</b>이었어요.<br><br class="gap">
+          긴 방학 동안 매일 일정한 루틴을 유지하며,<br><br class="gap">
+          <b>집듣 후 낭독하기</b>로 영어 감각이 한 단계 성장했답니다✨<br><br class="gap">
           '귀로 들은 문장을 입으로 말하는' 그 첫 감각을 익힌 시기였어요☺️
         </div>
       </div>
@@ -847,11 +868,11 @@
         </div>
         <div class="note">
           <b>📘 투빈맘 한줄 요약</b>
-          초2는 꾸준함이 '결과'로 이어진 해이자,<br><br>
-          성취 후 찾아온 슬럼프를 조율하며<br><br>
-          아이에게 맞는 리듬을 다시 찾아간 시기💗<br><br>
-          그래서 낭독량과 필사를 줄이고,<br><br>
-          <b>글쓰기·미국학교·화상영어로 루틴을 유연하게 바꿔가며</b><br><br>
+          초2는 꾸준함이 '결과'로 이어진 해이자,<br><br class="gap">
+          성취 후 찾아온 슬럼프를 조율하며<br><br class="gap">
+          아이에게 맞는 리듬을 다시 찾아간 시기💗<br><br class="gap">
+          그래서 낭독량과 필사를 줄이고,<br><br class="gap">
+          <b>글쓰기·미국학교·화상영어로 루틴을 유연하게 바꿔가며</b><br><br class="gap">
           <b>'꾸준함의 힘'을 다시 다진 시간입니다✨</b>
         </div>
       </div>
@@ -933,13 +954,13 @@
           <b>📘 투빈맘 한줄 요약</b>
           7세엔 영어 영상 10분도 힘들어하던 아이였는데,<br>
           초3이 된 지금은 자막 없는 영어 영상과 장편 영화도 자연스럽게 즐길 만큼<br>
-          영어 노출이 생활 속에 자리 잡은 시기💗<br><br>
+          영어 노출이 생활 속에 자리 잡은 시기💗<br><br class="gap">
           엄마표로 리딩·집듣·낭독을 이어오며 영어 감각을 차근차근 쌓아왔고,<br>
-          초3으로 갈수록 듣기·읽기뿐 아니라 말하기와 라이팅까지 자연스럽게 연결되고 있어요✨<br><br>
-          다만 엄마표만으로 계속 끌고 가기엔 저도 점점 체력적으로 부담이 생기더라구요🥲<br><br>
+          초3으로 갈수록 듣기·읽기뿐 아니라 말하기와 라이팅까지 자연스럽게 연결되고 있어요✨<br><br class="gap">
+          다만 엄마표만으로 계속 끌고 가기엔 저도 점점 체력적으로 부담이 생기더라구요🥲<br><br class="gap">
           그래서 에픽 같은 온라인 도서관,<br>
           VIPKid 북미권 화상영어,<br>
-          리얼 아카데미 같은 패드 학습도 함께 활용하며<br><br>
+          리얼 아카데미 같은 패드 학습도 함께 활용하며<br><br class="gap">
           아이도 즐겁고, 엄마도 오래 갈 수 있는 방향으로 루틴을 조금씩 조율해가고 있는 중입니다📖💕
         </div>
       </div>
@@ -1003,7 +1024,7 @@
       <div class="note">
         <b>💬 투빈맘 한 줄 기록</b>
         "아... 이제 영어도 진짜 다시 해야겠다🤣"<br>
-        AR 검사 결과를 보고 든 생각이에요.<br><br>
+        AR 검사 결과를 보고 든 생각이에요.<br><br class="gap">
         레벨 욕심보다 <b>거부감 없이 꾸준히 이어가는 것</b>을<br>
         다시 목표로 잡았어요.
       </div>
@@ -1021,10 +1042,10 @@
     <b>📘 투빈맘 한마디</b>
     엄마표 영어는<br>
     정답이 있는 게 아니라,<br>
-    아이에 맞게 계속 조율해가는 과정인 것 같아요 :)<br><br>
+    아이에 맞게 계속 조율해가는 과정인 것 같아요 :)<br><br class="gap">
     처음부터 완벽하게 하려고 하기보다<br>
     하나씩 가볍게 시작해 보시고,<br>
-    아이 반응 보면서 조정해 보시면<br><br>
+    아이 반응 보면서 조정해 보시면<br><br class="gap">
     그걸로도 충분히 좋은 시작이라고 생각해요
   </div>
 </div>
@@ -1033,7 +1054,7 @@
   <div class="intro-box" style="text-align:left; max-width:540px; margin:0 auto 18px;">
     혹시 보시고, 궁금한 점이나 고민되는 부분 있으시면<br>
     편하게 DM 주세요 💕<br>
-    늦더라도 꼭 확인하고, 답변 드리고 있답니다!<br><br>
+    늦더라도 꼭 확인하고, 답변 드리고 있답니다!<br><br class="gap">
     <a class="insta" href="https://www.instagram.com/2bin_mom/?hl=ko" target="_blank" rel="noopener">📸 @2bin_mom 인스타 DM 보내기</a>
   </div>
   <div class="warn">⚠️ 본 자료는 투빈맘이 직접 정리한 콘텐츠입니다.<br>무단 복제·캡처·배포 금지 🚫<br>상업적 활용 시 법적 조치가 이루어질 수 있습니다.</div>
