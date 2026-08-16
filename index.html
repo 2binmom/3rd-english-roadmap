@@ -35,6 +35,8 @@
     --shadow:0 2px 12px rgba(224,86,122,0.09);
   }
   *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
   body{
     margin:0; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
@@ -95,6 +97,30 @@
   }
   .toc a:hover{background:var(--pink-light); color:#fff;}
 
+  /* ── 번호 카드형 이동 메뉴 ── */
+  .step-nav{display:flex; flex-direction:column; gap:14px; margin-top:22px;}
+  .step-nav-meta{font-size:12px; color:var(--sub); margin-bottom:2px;}
+  .step-nav-card{
+    display:block; background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px 22px; text-decoration:none; color:inherit;
+    transition:transform .15s, box-shadow .15s, border-color .15s;
+  }
+  .step-nav-card:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(224,86,122,.14); border-color:var(--pink-light);}
+  .step-nav-num{
+    width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    background:var(--pink-bg); color:var(--pink-deep);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px;
+  }
+  .step-nav-row{display:flex; align-items:flex-start; gap:14px;}
+  .step-nav-body{flex:1; min-width:0;}
+  .step-nav-title{font-size:16px; font-weight:800; color:var(--ink); margin:0 0 6px; display:flex; align-items:center; gap:6px;}
+  .step-nav-title .arrow{color:var(--pink-deep); font-size:14px;}
+  .step-nav-tag{
+    font-size:10.5px; font-weight:800; color:var(--pink-deep); background:var(--pink-bg);
+    border-radius:999px; padding:2px 9px; margin-left:2px;
+  }
+  .step-nav-desc{font-size:13px; color:var(--sub); line-height:1.75; margin:0;}
+
   /* ── 타임라인 ── */
   .timeline{position:relative; padding:36px 0 4px;}
   .timeline::before{
@@ -152,6 +178,30 @@
     font-size:13px; font-style:italic; line-height:1.85; color:#8A7580;
   }
   .quote-box b{color:var(--pink-deep); font-style:normal;}
+
+  /* ── 원문 서술 블록 (요약 없이 그대로) ── */
+  .sub-block{margin:26px 0;}
+  .sub-block:first-of-type{margin-top:20px;}
+  .sub-head{
+    font-size:15px; font-weight:800; color:var(--ink); margin:0 0 10px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .sub-text{font-size:13px; line-height:1.9; color:#5A4650; margin:0 0 10px;}
+  .sub-text:last-child{margin-bottom:0;}
+  .sub-text b{color:var(--pink-deep);}
+  .sub-list{margin:0 0 12px 18px; padding:0;}
+  .sub-list li{font-size:12.5px; line-height:1.85; color:#5A4650; margin-bottom:6px;}
+  .sub-list li:last-child{margin-bottom:0;}
+  .sub-list.nested{margin-top:6px; margin-bottom:0;}
+  .point-box{
+    background:#FFF9E6; border:1px solid #FFE9A8; border-radius:12px;
+    padding:13px 15px; margin-top:12px; font-size:12.5px; line-height:1.85; color:#6B5A20;
+  }
+  .point-box b{display:block; color:#B8860B; margin-bottom:6px; font-size:12.5px;}
+  .point-box ul{margin:0 0 0 16px; padding:0;}
+  .point-box li{margin-bottom:4px;}
+  .point-box li:last-child{margin-bottom:0;}
+  .sub-block .item-list{margin:12px 0 0;}
 
   .ar-card{
     background:linear-gradient(135deg,var(--s3-bg),var(--s4-bg));
@@ -231,13 +281,55 @@
     ✔️초2 폴리 합격과 슬럼프,<br>
     ✔️초3 지금 다시 불붙이는 중인 여름방학까지<br><br>
     시기가 지나면서 <strong>뭐가 어떻게 바뀌었는지</strong> 순서대로 정리했답니다💖
-    <div class="toc">
-      <a href="#step0">7세 하반기</a>
-      <a href="#step1">초1</a>
-      <a href="#step2">초2</a>
-      <a href="#step3">초3 (지금까지)</a>
-      <a href="#step4">여름방학</a>
-    </div>
+  </div>
+
+  <div class="step-nav-meta">시기 5개 · 누르면 아래 내용으로 이동해요</div>
+  <div class="step-nav">
+    <a class="step-nav-card" href="#step0">
+      <div class="step-nav-row">
+        <div class="step-nav-num">0</div>
+        <div class="step-nav-body">
+          <div class="step-nav-title">7세 하반기 <span class="arrow">↓</span></div>
+          <p class="step-nav-desc">아직은 '공부'보다 '노출'. 만 3세에 멈췄던 영어를 7세 11월부터 흘려듣기·영상 노출로 천천히 다시 시작했어요.</p>
+        </div>
+      </div>
+    </a>
+    <a class="step-nav-card" href="#step1">
+      <div class="step-nav-row">
+        <div class="step-nav-num">1</div>
+        <div class="step-nav-body">
+          <div class="step-nav-title">초1 <span class="arrow">↓</span></div>
+          <p class="step-nav-desc">영어 루틴, 처음 만들기. 파닉스로 소리를 익히고 집중듣기·사이트워드·낭독까지 확장한 시기예요.</p>
+        </div>
+      </div>
+    </a>
+    <a class="step-nav-card" href="#step2">
+      <div class="step-nav-row">
+        <div class="step-nav-num">2</div>
+        <div class="step-nav-body">
+          <div class="step-nav-title">초2 <span class="arrow">↓</span></div>
+          <p class="step-nav-desc">리딩 확장 &amp; 폴리 레벨테스트 합격 ✨ 합격 후 찾아온 슬럼프를 유연하게 조율한 시기예요.</p>
+        </div>
+      </div>
+    </a>
+    <a class="step-nav-card" href="#step3">
+      <div class="step-nav-row">
+        <div class="step-nav-num">3</div>
+        <div class="step-nav-body">
+          <div class="step-nav-title">초3 (지금까지) <span class="arrow">↓</span></div>
+          <p class="step-nav-desc">수학에 집중하는 동안, 영어는 유지 모드. 리얼 아카데미로 라이팅·스피킹을 연결했어요.</p>
+        </div>
+      </div>
+    </a>
+    <a class="step-nav-card" href="#step4">
+      <div class="step-nav-row">
+        <div class="step-nav-num">4</div>
+        <div class="step-nav-body">
+          <div class="step-nav-title">여름방학 (지금) <span class="arrow">↓</span></div>
+          <p class="step-nav-desc">1년 제자리걸음이던 영어, 다시 불붙이기. AR 검사를 계기로 집중듣기·낭독을 재시작했어요.</p>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
 
@@ -251,36 +343,116 @@
       <h2>아직은 '공부'보다 '노출'</h2>
       <p class="step-summary">어릴 때는 영어 영상을 가끔 틀어주곤 했어요. 하지만 <b>만 3세 무렵</b>, 경빈이는 한글 발음을 제대로 못했던 시기라 그때는 과감하게 영어 노출을 멈췄습니다. 이후 4년이 지나, 아이의 언어 감각이 충분히 자리 잡은 <b>7세 11월</b>, 다시 '엄마표 영어'를 천천히 시작했어요🌱</p>
       <p class="quote-box">영어는 흘러넘칠 때 비로소 말이 된다.<br>듣기가 차면 리딩이 되고, 리딩이 넘치면 스피킹이 된다.<br>결국, <b>잠복기를 견디는 시간은 엄마의 인내의 시간</b>이다🍃</p>
-      <div class="item-list">
-        <a class="item lk-none" href="https://www.youtube.com/@SuperSimpleSongs" target="_blank" rel="noopener">
-          <div class="item-cover emoji">🎵</div>
-          <div class="item-body">
-            <div class="item-sub">흘려듣기</div>
-            <div class="item-name">슈퍼심플송 (Super Simple Songs)</div>
-            <div class="item-role">놀 때·차에서 배경음악처럼 틀어두기. 영어를 '공부'가 아닌 '환경음'으로 먼저 들려줬어요.</div>
-            <span class="item-when">첫 노출</span>
-          </div>
-        </a>
-        <a class="item lk-none" href="https://www.youtube.com/@PeppaPigOfficial" target="_blank" rel="noopener">
-          <div class="item-cover emoji">🐷</div>
-          <div class="item-body">
-            <div class="item-sub">영어 영상</div>
-            <div class="item-name">페파피그 (Peppa Pig)</div>
-            <div class="item-role">영어도서관에서 책을 먼저 발견하고, 책과 연계해서 영상을 보기 시작했어요.</div>
-            <span class="item-when">하루 30분 → 60분까지</span>
-          </div>
-        </a>
-        <a class="item lk-none" href="https://www.youtube.com/@Numberblocks" target="_blank" rel="noopener">
-          <div class="item-cover emoji">🔢</div>
-          <div class="item-body">
-            <div class="item-sub">영어 영상</div>
-            <div class="item-name">넘버블럭스 (Numberblocks)</div>
-            <div class="item-role">짧고 반복적인 대사라 듣기 적응에 효과적이었어요. 팝업북·그림책 노출도 함께 병행했어요.</div>
-            <span class="item-when">이후 확장</span>
-          </div>
-        </a>
+
+      <div class="sub-block">
+        <div class="sub-head">🎵 1. 흘려듣기 루틴</div>
+        <div class="sub-text"><b>첫 노출:</b> 슈퍼심플송 (Super Simple Songs)</div>
+        <ul class="sub-list">
+          <li><b>방법</b> — 아이들이 놀 때, 자연스럽게 배경음악처럼 틀어두기 · 차에서 이동할 때에도 계속 노출🎶</li>
+          <li><b>기록</b> — 1주차: 좋아하는 노래가 생김 / 2주차: 영상도 함께 보다 보니 "이건 꼭 봐야 해!" 하며 놀다가도 영상 앞에 앉고, 엄빠에게 노래를 알려주기도 함 💛</li>
+        </ul>
+        <div class="item-list">
+          <a class="item lk-none" href="https://www.youtube.com/@SuperSimpleSongs" target="_blank" rel="noopener">
+            <div class="item-cover emoji">🎵</div>
+            <div class="item-body">
+              <div class="item-sub">흘려듣기</div>
+              <div class="item-name">슈퍼심플송 (Super Simple Songs)</div>
+              <div class="item-role">놀 때·차에서 배경음악처럼 틀어두기. 영어를 '공부'가 아닌 '환경음'으로 먼저 들려줬어요.</div>
+              <span class="item-when">첫 노출</span>
+            </div>
+          </a>
+        </div>
+        <div class="point-box">
+          <b>💡 핵심 포인트</b>
+          <ul>
+            <li>영어를 '공부' 아닌 '환경음'처럼 들려주기</li>
+            <li>억지 시키지 말고, 자연스럽게 흥미를 붙이기</li>
+          </ul>
+        </div>
       </div>
-      <div class="note"><b>💬 투빈맘 한 줄 기록</b>이 시기의 핵심은 오직 '영어 영상 노출'이에요. 교재나 단어 공부를 함께하면 역효과예요. 한글 자막 OFF, 아이 관심사 기반 영상으로 1주~한 달은 인내하며 맞는 영상을 찾아주는 게 먼저예요.</div>
+
+      <div class="sub-block">
+        <div class="sub-head">📺 2. 영어 영상 노출</div>
+        <div class="sub-text"><b>첫 영상:</b> 페파피그 (Peppa Pig) 🐷 — 마침 영어도서관에서 페파피그 책을 발견한 후, 책과 연계되어 영상을 보기 시작함! (이후 실제 페파피그 영어책도 구입했지만, 당연히 그림만 봤음 ㅎㅎ)</div>
+        <div class="sub-text"><b>이후 영상:</b> 넘버블럭스 (Numberblocks) 🔢 — 짧고 반복적인 대사로 듣기 적응에 효과적</div>
+        <div class="item-list">
+          <a class="item lk-none" href="https://www.youtube.com/@PeppaPigOfficial" target="_blank" rel="noopener">
+            <div class="item-cover emoji">🐷</div>
+            <div class="item-body">
+              <div class="item-sub">영어 영상</div>
+              <div class="item-name">페파피그 (Peppa Pig)</div>
+              <div class="item-role">영어도서관에서 책을 먼저 발견하고, 책과 연계해서 영상을 보기 시작했어요.</div>
+              <span class="item-when">첫 영상</span>
+            </div>
+          </a>
+          <a class="item lk-none" href="https://www.youtube.com/@Numberblocks" target="_blank" rel="noopener">
+            <div class="item-cover emoji">🔢</div>
+            <div class="item-body">
+              <div class="item-sub">영어 영상</div>
+              <div class="item-name">넘버블럭스 (Numberblocks)</div>
+              <div class="item-role">짧고 반복적인 대사로 듣기 적응에 효과적이었어요.</div>
+              <span class="item-when">이후 확장</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="sub-block">
+        <div class="sub-head">⏰ 시간 &amp; 적응 포인트</div>
+        <ul class="sub-list">
+          <li>처음 영어영상을 접하면 <b>5분도 버티기 힘들어요!</b> 이건 정말 당연한 과정이에요☺️</li>
+          <li>처음엔 아이가 관심 있는 주제(공룡, 포켓몬, 동물 등)로 엄마가 영상을 미리 찾아두세요! 여러 영상을 찾아놔도, 생각보다 아이는 안 봅니다😂 (참고로 포켓몬 러버 투빈이들도 포켓몬 영어 영상은 안 봤어요…ㅎㅎ)</li>
+          <li>1분마다 "이거 안 볼래!" 할 수 있어요. 지극히 정상이에요🙆‍♀️ 영어인데 무슨 말인지 모르니 당연하죠!</li>
+          <li>핵심은 '여러 영상 찾아두기'! 그중에서 하나라도 아이가 멈춰본다면 성공이에요✨ 그렇게 5분이 10분이 되고, 점점 길어집니다.</li>
+          <li>하루 목표: 처음엔 30분 정도 영상 노출🎬 → 아이가 중간에 "그만 볼래" 하지 않고 자연스럽게 집중한다면, 60분까지 이어가주세요!</li>
+          <li>이 시기의 첫 시작은 오직 "영어 영상 노출"이에요. 👉 이때 영어 학습(교재, 단어 공부)을 함께하면 역효과 납니다! 일단 '귀가 영어에 익숙해지는 시간'을 충분히 주세요👂</li>
+          <li>그리고 한 가지 팁! 한글 TV는 잠시 끊기. 그래야 "이거라도 본다"는 마음으로 영어 영상에 자연스럽게 적응해요😉</li>
+        </ul>
+        <div class="point-box">
+          <b>💡 핵심 포인트</b>
+          <ul>
+            <li>무조건 한글자막 OFF!</li>
+            <li>아이의 관심사 기반 영상으로 흥미 유도</li>
+            <li>보통 속도·반복 가능한 콘텐츠 선택</li>
+            <li>맞는 영상 찾기까지 1주~한 달은 인내의 시간!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub-block">
+        <div class="sub-head">💡 영어 영상 고르는 Tip</div>
+        <ul class="sub-list">
+          <li>1️⃣ 아이 관심사로 영어 검색하기 (ex. Ryan's World, Toy unboxing, Kids science, Cooking for kids)</li>
+          <li>2️⃣ 보통 속도로 말하는 영상 고르기 (너무 빠르면 이해 안 되고, 너무 느리면 흥미 잃음)</li>
+          <li>3️⃣ 반복해도 재밌는 영상 선택하기 🎧</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <div class="sub-head">📖 3. 영어 그림책 노출</div>
+        <ul class="sub-list">
+          <li><b>방법</b> — 팝업북·스토리북 위주로, 아이에게 읽어주기 (투빈맘은 영알못 엄마라, 내가 먼저 연습한 뒤 읽어줌…ㅠㅠ) · 영어도서관 방문해서 아이가 직접 읽고 싶은 책 고르게 하기📚</li>
+        </ul>
+        <div class="point-box">
+          <b>💡 핵심 포인트</b>
+          <ul>
+            <li>쌍둥이책(영한 버전) 활용하면 스토리 이해↑</li>
+            <li>아이의 선택권을 주면 영어책 거부감↓</li>
+          </ul>
+        </div>
+        <div class="sub-text" style="margin-top:12px;">영어영상 + 그림책 노출 조합 — 학습은 하지 않되, 꼭 그림책도 함께 노출해줘야 합니다! 영상으로 들은 단어·표현이 책 속에서 반복될 때, 아이의 '영어 귀'가 한층 더 단단해져요💫</div>
+      </div>
+
+      <div class="sub-block">
+        <div class="sub-head">🕒 4. 7세 마무리 조언</div>
+        <ul class="sub-list">
+          <li><b>6개월 목표:</b> 하루 1시간 영어영상 루틴 만들기 (집중해서 1시간 보면 이미 성공💯)</li>
+          <li><b>성과는 단기간엔 보이지 않음!</b> 영어는 1~2년 단위로 서서히 드러나는 공부⌛</li>
+          <li><b>실패해도 괜찮아요.</b> 귀에 들어온 영어는 절대 사라지지 않습니다🌱</li>
+        </ul>
+      </div>
+
+      <div class="note"><b>📘 다음 편 예고</b>→ Step 1. 초1 영어 로드맵 — 입학 후, 본격적인 영어 학습 시작!</div>
     </section>
 
     <!-- STEP 1 · 초1 -->
