@@ -102,8 +102,7 @@
   .step-nav-meta{
     font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
     font-size:25px; color:var(--pink-deep); text-align:center; line-height:1.4;
-    background:var(--pink-bg); border:1px solid rgba(224,86,122,0.25);
-    border-radius:14px; padding:13px 16px; margin-bottom:16px;
+    margin-bottom:16px;
   }
   .step-nav-card{
     display:block; background:var(--card); border:1px solid var(--line); border-radius:16px;
@@ -118,7 +117,10 @@
   }
   .step-nav-row{display:flex; align-items:flex-start; gap:14px;}
   .step-nav-body{flex:1; min-width:0;}
-  .step-nav-title{font-size:19px; font-weight:800; color:var(--ink); margin:0 0 6px; display:flex; align-items:center; gap:6px;}
+  .step-nav-title{
+    font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
+    font-size:19px; color:var(--ink); margin:0 0 6px; display:flex; align-items:center; gap:6px;
+  }
   .step-nav-tag{
     font-size:13.5px; font-weight:800; color:var(--pink-deep); background:var(--pink-bg);
     border-radius:999px; padding:2px 9px; margin-left:2px;
@@ -300,7 +302,7 @@
   <img class="logo" src="character.png" alt="투빈맘 캐릭터">
   <span class="badge">🇺🇸 투빈맘's 엄마표영어 자료나눔</span>
   <h1>투빈맘's 엄마표영어💖<br>로드맵 (초3 경빈)</h1>
-  <p>7세 하반기부터 초3 여름방학까지, 실제로 걸어온 길 그대로예요</p>
+  <p>7세 하반기부터 초3 여름방학까지,<br>실제로 걸어온 길 그대로예요</p>
   <div class="hero-actions">
     <a class="insta" href="https://www.instagram.com/2bin_mom/?hl=ko" target="_blank" rel="noopener">📸 @2bin_mom 인스타 보러가기</a>
     <button type="button" class="share-btn" onclick="shareKakao(this)">💬 카톡으로 공유</button>
@@ -405,7 +407,7 @@
         </ul>
         <div class="item-list">
           <a class="item lk-none" href="https://www.youtube.com/@SuperSimpleSongs" target="_blank" rel="noopener">
-            <div class="item-cover emoji">🎵</div>
+            <div class="item-cover"><img src="images/simplesongs-thumb.jpg" alt="Super Simple Songs 썸네일" loading="lazy"></div>
             <div class="item-body">
               <div class="item-sub">흘려듣기</div>
               <div class="item-name">슈퍼심플송 (Super Simple Songs)</div>
@@ -435,7 +437,7 @@
         </ul>
         <div class="item-list">
           <a class="item lk-none" href="https://www.youtube.com/@PeppaPigOfficial" target="_blank" rel="noopener">
-            <div class="item-cover emoji">🐷</div>
+            <div class="item-cover"><img src="images/peppapig-thumb.jpg" alt="Peppa Pig 썸네일" loading="lazy"></div>
             <div class="item-body">
               <div class="item-sub">영어 영상</div>
               <div class="item-name">페파피그 (Peppa Pig)</div>
@@ -444,7 +446,7 @@
             </div>
           </a>
           <a class="item lk-none" href="https://www.youtube.com/@Numberblocks" target="_blank" rel="noopener">
-            <div class="item-cover emoji">🔢</div>
+            <div class="item-cover"><img src="images/numberblocks-thumb.jpg" alt="Numberblocks 썸네일" loading="lazy"></div>
             <div class="item-body">
               <div class="item-sub">영어 영상</div>
               <div class="item-name">넘버블럭스 (Numberblocks)</div>
@@ -1016,18 +1018,20 @@
 <div class="closing">
   <div class="voice">
     <b>📘 투빈맘 한마디</b>
-    엄마표 영어는 <b>정답이 있는 게 아니라</b>,<br>
-    아이에 맞게 계속 조율해가는 과정인 것 같아요.<br><br>
+    엄마표 영어는<br>
+    정답이 있는 게 아니라,<br>
+    아이에 맞게 계속 조율해가는 과정인 것 같아요 :)<br><br>
     처음부터 완벽하게 하려고 하기보다<br>
-    <b>하나씩 가볍게 시작</b>해보시고,<br>
-    아이 반응 보면서 조정해보시면<br>
-    그걸로도 <b>충분히 좋은 시작</b>이라고 생각해요 😊
+    하나씩 가볍게 시작해 보시고,<br>
+    아이 반응 보면서 조정해 보시면<br><br>
+    그걸로도 충분히 좋은 시작이라고 생각해요
   </div>
 </div>
 
 <footer>
   <div class="intro-box" style="text-align:left; max-width:540px; margin:0 auto 18px;">
-    혹시 보시고, 궁금한 점이나 고민되는 부분 있으시면 편하게 DM 주세요 💕<br>
+    혹시 보시고, 궁금한 점이나 고민되는 부분 있으시면<br>
+    편하게 DM 주세요 💕<br>
     늦더라도 꼭 확인하고, 답변 드리고 있답니다!<br><br>
     <a class="insta" href="https://www.instagram.com/2bin_mom/?hl=ko" target="_blank" rel="noopener">📸 @2bin_mom 인스타 DM 보내기</a>
   </div>
