@@ -209,8 +209,8 @@
   }
 
   /* ── 원문 서술 블록 (요약 없이 그대로) ── */
-  .sub-block{margin:26px 0;}
-  .sub-block:first-of-type{margin-top:20px;}
+  .sub-block{margin:26px 0 0; padding-top:26px; border-top:1.5px solid var(--line);}
+  .sub-block:first-of-type{margin-top:20px; padding-top:0; border-top:none;}
   .sub-head{
     font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
     font-size:20px; color:var(--ink); margin:0 0 12px; line-height:1.5;
@@ -222,10 +222,21 @@
   .sub-text{font-size:16px; line-height:1.9; color:#5A4650; margin:0 0 10px;}
   .sub-text:last-child{margin-bottom:0;}
   .sub-text b{color:var(--pink-deep);}
-  .sub-list{margin:0 0 12px 18px; padding:0;}
-  .sub-list li{font-size:15.5px; line-height:1.85; color:#5A4650; margin-bottom:6px;}
+  .sub-list{
+    list-style:none; margin:0 0 14px; padding:17px 19px;
+    background:var(--pink-bg); border-radius:16px;
+  }
+  .sub-list li{
+    position:relative; padding-left:17px;
+    font-size:15.5px; line-height:1.85; color:var(--ink); margin-bottom:10px;
+  }
+  .sub-list li::before{content:'•'; position:absolute; left:0; top:0; color:var(--pink-deep); font-weight:800;}
   .sub-list li:last-child{margin-bottom:0;}
-  .sub-list.nested{margin-top:6px; margin-bottom:0;}
+  .sub-list.nested{
+    background:none; padding:0; border-radius:0; margin:8px 0 0;
+  }
+  .sub-list.nested li{margin-bottom:6px;}
+  .sub-list.nested li::before{content:'◦';}
   .point-box{
     background:var(--tip-bg); border:none; border-radius:16px;
     padding:18px 19px; margin-top:16px; font-size:15.5px; line-height:1.9; color:var(--ink);
