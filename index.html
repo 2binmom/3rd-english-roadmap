@@ -213,10 +213,10 @@
   .sub-block:first-of-type{margin-top:20px;}
   .sub-head{
     font-family:'Jalnan',-apple-system,sans-serif; font-weight:normal;
-    font-size:20px; color:var(--ink); margin:0 0 12px;
-    display:inline-block;
-    text-decoration:underline; text-decoration-color:var(--pink-light);
-    text-decoration-thickness:6px; text-underline-offset:3px;
+    font-size:20px; color:var(--ink); margin:0 0 12px; line-height:1.5;
+    display:inline-block; padding:1px 3px;
+    background-image:linear-gradient(var(--pink-light), var(--pink-light));
+    background-repeat:no-repeat; background-size:100% 50%; background-position:0 100%;
   }
   .sub-text{font-size:16px; line-height:1.9; color:#5A4650; margin:0 0 10px;}
   .sub-text:last-child{margin-bottom:0;}
@@ -527,7 +527,7 @@
       </div>
 
       <div class="step-jump">
-        <button type="button" class="main" onclick="showDetail('step1', event)">2️⃣ 초1 보기 →</button>
+        <button type="button" class="main" onclick="showDetail('step1', event)">초1 보기 →</button>
       </div>
     </section>
 
@@ -685,7 +685,7 @@
 
       <div class="step-jump">
         <button type="button" onclick="showDetail('step0', event)">← 7세 하반기</button>
-        <button type="button" class="main" onclick="showDetail('step2', event)">3️⃣ 초2 보기 →</button>
+        <button type="button" class="main" onclick="showDetail('step2', event)">초2 보기 →</button>
       </div>
     </section>
 
@@ -864,7 +864,7 @@
 
       <div class="step-jump">
         <button type="button" onclick="showDetail('step1', event)">← 초1</button>
-        <button type="button" class="main" onclick="showDetail('step3', event)">4️⃣ 초3 1학기 보기 →</button>
+        <button type="button" class="main" onclick="showDetail('step3', event)">초3 1학기 보기 →</button>
       </div>
     </section>
 
@@ -952,7 +952,7 @@
 
       <div class="step-jump">
         <button type="button" onclick="showDetail('step2', event)">← 초2</button>
-        <button type="button" class="main" onclick="showDetail('step4', event)">5️⃣ 초3 여름방학 보기 →</button>
+        <button type="button" class="main" onclick="showDetail('step4', event)">초3 여름방학 보기 →</button>
       </div>
     </section>
 
